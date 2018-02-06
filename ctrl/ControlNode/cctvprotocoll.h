@@ -1,8 +1,10 @@
 #ifndef CCTVPROTOCOLL_H
 #define CCTVPROTOCOLL_H
 
-
-
+#include <QObject>
+#include <QString>
+#include <QJsonDocument>
+#include <QJsonObject>
 
 
 
@@ -16,6 +18,8 @@ class CctvProtocoll
 {
 public:
     CctvProtocoll();
+
+    QString discover_getMessage();
 };
 
 #endif // CCTVPROTOCOLL_H
