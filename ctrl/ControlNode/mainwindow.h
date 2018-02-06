@@ -7,6 +7,12 @@ namespace Ui {
 class MainWindow;
 }
 
+
+/**
+ * @brief   The MainWindow class
+ *          The MainWindow class provides all objects for a successful launch of the application.
+ *
+ */
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
