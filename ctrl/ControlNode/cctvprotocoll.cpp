@@ -19,7 +19,7 @@ QString CctvProtocoll::discover_getMessage(QJsonObject object){
 
     err=0;
 
-    if(object.isEmpty() || object == NULL) {
+    if(object.isEmpty()) {
         err=1;
     }
 
