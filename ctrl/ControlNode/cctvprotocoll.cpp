@@ -65,7 +65,7 @@ QString CctvProtocoll::discover_getMessage( QString nodePort,
     err=0;
 
     if(     nodePort == ""      || nodePort == NULL
-        ||  nodeIP   == ""      || nodeIP == NULL
+        ||  nodeIP == ""        || nodeIP == NULL
         ||  nodeHostname == ""  || nodeHostname == NULL
         ||  nodeType == ""      || nodeType == NULL)
     {
