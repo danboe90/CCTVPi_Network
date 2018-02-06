@@ -19,7 +19,7 @@ class CctvProtocoll
 public:
     CctvProtocoll();
 
-    QString discover_getMessage();
+    QString discover_getMessage(QJsonObject object);
 };
 
 #endif // CCTVPROTOCOLL_H
