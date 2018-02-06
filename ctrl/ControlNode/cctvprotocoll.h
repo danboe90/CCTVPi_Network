@@ -6,7 +6,10 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 
-
+#define CCTVPROT_DISCOVER_NODE_PORT         "nodePort"
+#define CCTVPROT_DISCOVER_NODE_TYPE         "nodeType"
+#define CCTVPROT_DISCOVER_NODE_IP           "nodeIP"
+#define CCTVPROT_DISCOVER_NODE_HOSTNAME     "nodeHostename"
 
 
 /**

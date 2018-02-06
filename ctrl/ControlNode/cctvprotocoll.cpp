@@ -23,7 +23,13 @@ QString CctvProtocoll::discover_getMessage(QJsonObject object){
         err=1;
     }
 
-    /// todo: insert object check here for valid discovery object
+    if(     !object.contains(CCTVPROT_DISCOVER_NODE_PORT)
+        ||  !object.contains(CCTVPROT_DISCOVER_NODE_IP)
+        ||  !object.contains(CCTVPROT_DISCOVER_NODE_HOSTNAME)
+        ||  !object.contains(CCTVPROT_DISCOVER_NODE_TYPE))
+    {
+        err=1;
+    }
 
     QJsonDocument doc(object);
     if(doc.isEmpty()) {
