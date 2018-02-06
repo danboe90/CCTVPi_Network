@@ -7,9 +7,9 @@ However, the rest of the functionality has been implemented on my very own.
 
 ## Content
 This repository will contain:
-[x] Folder ctrl containing the QT project for a control-node
-[ ] Folder auth containing the QT project for an authentication-node
-[ ] Folder disp containing the QT project for an display-node
-[ ] Folder cam containing the QT project for a camera-node
+- [x] Folder ctrl containing the QT project for a control-node
+- [ ] Folder auth containing the QT project for an authentication-node
+- [ ] Folder disp containing the QT project for an display-node
+- [ ] Folder cam containing the QT project for a camera-node
 
 ## Licence
