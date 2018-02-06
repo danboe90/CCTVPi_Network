@@ -42,3 +42,65 @@ QString CctvProtocoll::discover_getMessage(QJsonObject object){
     }
     return NULL;
 }
+
+
+/**
+ * @brief   CctvProtocoll::discover_getMessage
+ *          This is an overloaded method.
+ * @param   nodePort
+ * @param   nodeIP
+ * @param   nodeHostname
+ * @param   nodeType
+ * @return  NULL if any errors occured
+ * @return  Qstring object containing a valid discovery message.
+ */
+QString CctvProtocoll::discover_getMessage( QString nodePort,
+                                            QString nodeIP,
+                                            QString nodeHostname,
+                                            QString nodeType)
+{
+    int err;
+    QJsonObject object;
+
+    err=0;
+
+    if(     nodePort == ""      || nodePort == NULL
+        ||  nodeIP   == ""      || nodeIP == NULL
+        ||  nodeHostname == ""  || nodeHostname == NULL
+        ||  nodeType == ""      || nodeType == NULL)
+    {
+        err=1;
+    }
+
+    if(!err) {
+        object.insert(CCTVPROT_DISCOVER_NODE_IP, nodeIP);
+        object.insert(CCTVPROT_DISCOVER_NODE_PORT, nodePort);
+        object.insert(CCTVPROT_DISCOVER_NODE_HOSTNAME, nodeHostname);
+        object.insert(CCTVPROT_DISCOVER_NODE_TYPE, nodeType);
+        QJsonDocument doc(object);
+        QString rtnString(doc.toJson(QJsonDocument::Indented));
+        return rtnString;
+    }
+    return NULL;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

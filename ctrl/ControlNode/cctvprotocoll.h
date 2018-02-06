@@ -23,6 +23,10 @@ public:
     CctvProtocoll();
 
     QString discover_getMessage(QJsonObject object);
+    QString discover_getMessage(QString nodePort,
+                                QString nodeIP,
+                                QString nodeHostname,
+                                QString nodeType);
 };
 
 #endif // CCTVPROTOCOLL_H
