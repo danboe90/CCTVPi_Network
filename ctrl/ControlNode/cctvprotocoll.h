@@ -20,13 +20,27 @@
 class CctvProtocoll
 {
 public:
+
     CctvProtocoll();
 
+
+    /*
+     * -------------------------------------------------------------- METHODES FOR DISCOVER PROCESS
+     */
     QString discover_getMessage(QJsonObject object);
     QString discover_getMessage(QString nodePort,
                                 QString nodeIP,
                                 QString nodeHostname,
                                 QString nodeType);
+
+    /*
+     * ------------------------------------------------------------ METHODS FOR OPERATIONAL PROCESS
+     */
+
+
+    /*
+     * --------------------------------------------------------------- METHODS FOR SHUTDOWN PROCESS
+     */
 };
 
 #endif // CCTVPROTOCOLL_H
