@@ -5,12 +5,21 @@ This project has been one of our projects during the studies at the UAS FH Techn
 The here presented implementation contains some of the methods already implemented.
 However, the rest of the functionality has been implemented on my very own.
 
+The entire network consists of nodes. Each node is represented as a Raspberry Pi 2 (or later) running one of the node-applications.
+The designed protocoll is capable of covering one network consisting of:
+- max. 1 control-node
+- min. 1 display-node
+- min. 1 camera-node
+- min. 1 authentication-node
+
 ## Content
 This repository will contain:
 - [x] Folder ctrl containing the QT project for a control-node
 - [ ] Folder auth containing the QT project for an authentication-node
 - [ ] Folder disp containing the QT project for an display-node
 - [ ] Folder cam containing the QT project for a camera-node
+
+For more information about the nodes, please visit the corresponding folders
 
 ## Licence
 Copyright (c) 2017 Daniel B.
