@@ -24,9 +24,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    cctvprotocoll.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    cctvprotocoll.h
 
 FORMS    += mainwindow.ui
 
