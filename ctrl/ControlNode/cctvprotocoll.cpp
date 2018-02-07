@@ -122,8 +122,54 @@ QString CctvProtocoll::operational_getMessage(QJsonObject object) {
 }
 
 
+/**
+ * @brief   CctvProtocoll::operational_getMessage
+ *          This method generates a QString representation of the operational-datapackage to be
+ *          transmitted from the control node to the other nodes.
+ * @param   nodePort
+ * @param   nodeIP
+ * @param   nodeHostname
+ * @param   nodeType
+ * @param   configuration
+ * @return  NULL - if somthing went wrong
+ * @return  QString object containing the data to be transmitted
+ */
+QString CctvProtocoll::operational_getMessage(QString nodePort,
+                                              QString nodeIP,
+                                              QString nodeHostname,
+                                              QString nodeType,
+                                              QJsonObject configuration)
+{
+    int err;
 
+    err=0;
 
+    /*
+     * -------------------------------------------------------------------------------- PARAM CHECK
+     */
+    if(     nodePort==""        ||  nodePort == NULL
+        ||  nodeIP == ""        ||  nodeIP == NULL
+        ||  nodeHostname == ""  ||  nodeHostname == NULL
+        ||  nodeType == ""      ||  nodeType == NULL
+        ||  configuration.isEmpty())
+    {
+        err=1;
+    }
+
+    if(!err) {
+        QJsonObject object;
+        object.insert(CCTVPROT_OPERATIONAL_NODE_PORT, nodePort);
+        object.insert(CCTVPROT_OPERATIONAL_NODE_IP, nodeIP);
+        object.insert(CCTVPROT_OPERATIONAL_NODE_HOSTNAME, nodeHostname);
+        object.insert(CCTVPROT_OPERATIONAL_NODE_TYPE, nodeType);
+        object.insert(CCTVPROT_OPERATIONAL_NODE_CONFIG, configuration);
+
+        QJsonDocument doc(object);
+        QString rtnString(doc.toJson(QJsonDocument::Indented));
+        return rtnString;
+    }
+    return NULL;
+}
 
 
 

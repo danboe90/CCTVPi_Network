@@ -43,6 +43,11 @@ public:
      * ------------------------------------------------------------ METHODS FOR OPERATIONAL PROCESS
      */
     QString operational_getMessage(QJsonObject object);
+    QString operational_getMessage(QString nodePort,
+                                   QString nodeIP,
+                                   QString nodeHostname,
+                                   QString nodeType,
+                                   QJsonObject configuration);
 
     /*
      * --------------------------------------------------------------- METHODS FOR SHUTDOWN PROCESS
