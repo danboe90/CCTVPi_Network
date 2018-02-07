@@ -86,8 +86,40 @@ QString CctvProtocoll::discover_getMessage( QString nodePort,
 
 
 
+/**
+ * @brief   CctvProtocoll::operational_getMessage
+ *          This method generates a transmission message for the operational process from
+ *          the control-node to one of the other nodes
+ * @param   object
+ * @return  NULL - if an error occured
+ * @return  QString object containing the data to transmit to the node
+ */
+QString CctvProtocoll::operational_getMessage(QJsonObject object) {
+    int err;
 
+    err=0;
 
+    if(object.isEmpty()) { err=1; }
+
+    // check if object contains the right content for the node
+    if(!err) {
+        if(     !object.contains(CCTVPROT_OPERATIONAL_NODE_PORT)
+            ||  !object.contains(CCTVPROT_OPERATIONAL_NODE_TYPE)
+            ||  !object.contains(CCTVPROT_OPERATIONAL_NODE_IP)
+            ||  !object.contains(CCTVPROT_OPERATIONAL_NODE_HOSTNAME)
+            ||  !object.contains(CCTVPROT_OPERATIONAL_NODE_CONFIG))
+        {
+            err=1;
+        }
+    }
+
+    if(!err) {
+        QJsonDocument doc(object);
+        QString rtnString(doc.toJson(QJsonDocument::Indented));
+        return rtnString;
+    }
+    return NULL;
+}
 
 
 

@@ -11,6 +11,12 @@
 #define CCTVPROT_DISCOVER_NODE_IP           "nodeIP"
 #define CCTVPROT_DISCOVER_NODE_HOSTNAME     "nodeHostename"
 
+#define CCTVPROT_OPERATIONAL_NODE_PORT      "nodePort"
+#define CCTVPROT_OPERATIONAL_NODE_TYPE      "nodeType"
+#define CCTVPROT_OPERATIONAL_NODE_IP        "nodeIP"
+#define CCTVPROT_OPERATIONAL_NODE_HOSTNAME  "nodeHostname"
+#define CCTVPROT_OPERATIONAL_NODE_CONFIG    "nodeConfiguration"
+
 
 /**
  * @brief   The CctvProtocoll class
@@ -36,7 +42,7 @@ public:
     /*
      * ------------------------------------------------------------ METHODS FOR OPERATIONAL PROCESS
      */
-
+    QString operational_getMessage(QJsonObject object);
 
     /*
      * --------------------------------------------------------------- METHODS FOR SHUTDOWN PROCESS
