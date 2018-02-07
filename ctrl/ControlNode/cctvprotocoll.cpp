@@ -172,8 +172,50 @@ QString CctvProtocoll::operational_getMessage(QString nodePort,
 }
 
 
+/**
+ * @brief   CctvProtocoll::operational_getConfigCam
+ *          This method generates a QJSonObject for camera-nodes containing the
+ *          information the camera needs.
+ * @param   framewidth
+ * @param   frameheight
+ * @param   framerate
+ * @param   destIP
+ * @param   destPort
+ * @return  QJsonObject containing the configuration of the camera-node if everything went OK
+ */
+QJsonObject CctvProtocoll::operational_getConfigCam(QString framewidth,
+                                                    QString frameheight,
+                                                    QString framerate,
+                                                    QString destIP,
+                                                    QString destPort)
+{
+    int err;
+    QJsonObject object;
 
+    err=0;
 
+    /*
+     * -------------------------------------------------------------------------------- PARAM CHECK
+     */
+    if(     framewidth == ""    || framewidth == NULL
+        ||  frameheight == ""   || frameheight == NULL
+        ||  framerate == ""     || framerate == NULL
+        ||  destIP == ""        || destIP == NULL
+        ||  destPort == ""      || destPort == NULL)
+    {
+        err=1;
+    }
+
+    if(!err) {
+
+        object.insert(CCTVPROT_OPERATIONAL_NODE_CONFIG_FW, framewidth);
+        object.insert(CCTVPROT_OPERATIONAL_NODE_CONFIG_FH, frameheight);
+        object.insert(CCTVPROT_OPERATIONAL_NODE_CONFIG_FR, framerate);
+        object.insert(CCTVPROT_OPERATIONAL_NODE_CONFIG_DESTIP, destIP);
+        object.insert(CCTVPROT_OPERATIONAL_NODE_CONFIG_DESTPORT, destPort);
+    }
+    return object;
+}
 
 
 

@@ -6,16 +6,22 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 
-#define CCTVPROT_DISCOVER_NODE_PORT         "nodePort"
-#define CCTVPROT_DISCOVER_NODE_TYPE         "nodeType"
-#define CCTVPROT_DISCOVER_NODE_IP           "nodeIP"
-#define CCTVPROT_DISCOVER_NODE_HOSTNAME     "nodeHostename"
+#define CCTVPROT_DISCOVER_NODE_PORT                 "nodePort"
+#define CCTVPROT_DISCOVER_NODE_TYPE                 "nodeType"
+#define CCTVPROT_DISCOVER_NODE_IP                   "nodeIP"
+#define CCTVPROT_DISCOVER_NODE_HOSTNAME             "nodeHostename"
 
-#define CCTVPROT_OPERATIONAL_NODE_PORT      "nodePort"
-#define CCTVPROT_OPERATIONAL_NODE_TYPE      "nodeType"
-#define CCTVPROT_OPERATIONAL_NODE_IP        "nodeIP"
-#define CCTVPROT_OPERATIONAL_NODE_HOSTNAME  "nodeHostname"
-#define CCTVPROT_OPERATIONAL_NODE_CONFIG    "nodeConfiguration"
+#define CCTVPROT_OPERATIONAL_NODE_PORT              "nodePort"
+#define CCTVPROT_OPERATIONAL_NODE_TYPE              "nodeType"
+#define CCTVPROT_OPERATIONAL_NODE_IP                "nodeIP"
+#define CCTVPROT_OPERATIONAL_NODE_HOSTNAME          "nodeHostname"
+#define CCTVPROT_OPERATIONAL_NODE_CONFIG            "nodeConfiguration"
+
+#define CCTVPROT_OPERATIONAL_NODE_CONFIG_FW         "framewidth"
+#define CCTVPROT_OPERATIONAL_NODE_CONFIG_FH         "frameheight"
+#define CCTVPROT_OPERATIONAL_NODE_CONFIG_FR         "framerate"
+#define CCTVPROT_OPERATIONAL_NODE_CONFIG_DESTIP     "destIP"
+#define CCTVPROT_OPERATIONAL_NODE_CONFIG_DESTPORT   "destPort"
 
 
 /**
@@ -48,6 +54,12 @@ public:
                                    QString nodeHostname,
                                    QString nodeType,
                                    QJsonObject configuration);
+
+    QJsonObject operational_getConfigCam(QString framewidth,
+                                         QString frameheight,
+                                         QString framerate,
+                                         QString destIP,
+                                         QString destPort);
 
     /*
      * --------------------------------------------------------------- METHODS FOR SHUTDOWN PROCESS
