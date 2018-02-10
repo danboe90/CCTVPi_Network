@@ -218,6 +218,56 @@ QJsonObject CctvProtocoll::operational_getConfigCam(QString framewidth,
 }
 
 
+/**
+ * @brief CctvProtocoll::operational_getConfigDisp
+ * @param framewidth
+ * @param frameheight
+ * @param framerate
+ * @param srcIP
+ * @param port
+ * @return
+ */
+QJsonObject CctvProtocoll::operational_getConfigDisp(QString framewidth,
+                                                     QString frameheight,
+                                                     QString framerate,
+                                                     QString srcIP,
+                                                     QString port)
+{
+    int err;
+    QJsonObject object;
+
+    err=0;
+
+    if(     framewidth == ""    ||  framewidth == NULL
+        ||  frameheight == ""   ||  frameheight == NULL
+        ||  framerate == ""     ||  framerate == NULL
+        ||  srcIP == ""         ||  srcIP == NULL
+        ||  port == ""          ||  port == NULL)
+    {
+        err=1;
+    }
+
+    if(!err) {
+        object.insert(CCTVPROT_OPERATIONAL_NODE_CONFIG_FW, framewidth);
+        object.insert(CCTVPROT_OPERATIONAL_NODE_CONFIG_FH, frameheight);
+        object.insert(CCTVPROT_OPERATIONAL_NODE_CONFIG_FR, framerate);
+        object.insert(CCTVPROT_OPERATIONAL_NODE_CONFIG_SRCIP, srcIP);
+        object.insert(CCTVPROT_OPERATIONAL_NODE_CONFIG_PORT, port);
+    }
+    return object;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

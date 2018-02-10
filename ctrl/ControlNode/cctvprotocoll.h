@@ -22,6 +22,8 @@
 #define CCTVPROT_OPERATIONAL_NODE_CONFIG_FR         "framerate"
 #define CCTVPROT_OPERATIONAL_NODE_CONFIG_DESTIP     "destIP"
 #define CCTVPROT_OPERATIONAL_NODE_CONFIG_DESTPORT   "destPort"
+#define CCTVPROT_OPERATIONAL_NODE_CONFIG_SRCIP      "srcIP"
+#define CCTVPROT_OPERATIONAL_NODE_CONFIG_PORT       "port"
 
 
 /**
@@ -60,6 +62,12 @@ public:
                                          QString framerate,
                                          QString destIP,
                                          QString destPort);
+
+    QJsonObject operational_getConfigDisp(QString framewidth,
+                                          QString frameheight,
+                                          QString framerate,
+                                          QString srcIP,
+                                          QString port);
 
     /*
      * --------------------------------------------------------------- METHODS FOR SHUTDOWN PROCESS
