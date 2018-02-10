@@ -219,13 +219,16 @@ QJsonObject CctvProtocoll::operational_getConfigCam(QString framewidth,
 
 
 /**
- * @brief CctvProtocoll::operational_getConfigDisp
- * @param framewidth
- * @param frameheight
- * @param framerate
- * @param srcIP
- * @param port
- * @return
+ * @brief   CctvProtocoll::operational_getConfigDisp
+ *          This method generates the configuration-object for the data-package in der
+ *          operational phase. This package is only allowed to be sent by the control-node.
+ * @param   framewidth
+ * @param   frameheight
+ * @param   framerate
+ * @param   srcIP
+ * @param   port
+ * @return  QJsonObject object. In case everything went OK, it contains the entire
+ *          confirguration needed. Otherwise it is an empty object.
  */
 QJsonObject CctvProtocoll::operational_getConfigDisp(QString framewidth,
                                                      QString frameheight,
