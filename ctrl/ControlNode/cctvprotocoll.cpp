@@ -220,7 +220,7 @@ QJsonObject CctvProtocoll::operational_getConfigCam(QString framewidth,
 
 /**
  * @brief   CctvProtocoll::operational_getConfigDisp
- *          This method generates the configuration-object for the data-package in der
+ *          This method generates the configuration-object for the data-package in the
  *          operational phase. This package is only allowed to be sent by the control-node.
  * @param   framewidth
  * @param   frameheight
@@ -264,8 +264,28 @@ QJsonObject CctvProtocoll::operational_getConfigDisp(QString framewidth,
 
 
 
+/**
+ * @brief   CctvProtocoll::operational_getConfigAuth
+ *          This method generates the configuration-object for the data-package
+ *          in the operational-phase. This package is only allowed to be sent by the control-node.
+ * @param   opCode
+ * @return  QJsonObject object. In case everything went OK, it contains the entire
+ *          configuration needed for the authentication-node. Otherwise an empty object is returned.
+ */
+QJsonObject CctvProtocoll::operational_getConfigAuth(QString opCode)
+{
+    int err;
+    QJsonObject object;
 
+    err=0;
 
+    if(opCode == "" || opCode == NULL) { err=1; }
+
+    if(!err) {
+        object.insert(CCTVPROT_OPERATIONAL_NODE_CONFIG_OPCODE, opCode);
+    }
+    return object;
+}
 
 
 
