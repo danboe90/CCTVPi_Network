@@ -1,12 +1,10 @@
 #include "nodeinfo.h"
 
 
+/**
+ * @brief   NodeInfo::NodeInfo
+ */
 NodeInfo::NodeInfo() { }
-
-
-
-
-
 
 
 /**
@@ -20,7 +18,6 @@ NodeInfo::NodeInfo(QJsonObject object)
         this->object = object;
     }
 }
-
 
 
 /**
