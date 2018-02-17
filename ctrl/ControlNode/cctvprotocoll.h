@@ -26,6 +26,9 @@
 #define CCTVPROT_OPERATIONAL_NODE_CONFIG_PORT       "port"
 #define CCTVPROT_OPERATIONAL_NODE_CONFIG_OPCODE     "opCode"
 
+#define CCTVPROT_SHUTDOWN_NODE_FROM                 "fromHostname"
+#define CCTVPROT_SHUTDOWN_NODE_TO                   "toHostname
+
 
 /**
  * @brief   The CctvProtocoll class
@@ -75,6 +78,8 @@ public:
     /*
      * --------------------------------------------------------------- METHODS FOR SHUTDOWN PROCESS
      */
+
+    QString shutdown_getMessage(QString fromHostname, QString toHostname);
 };
 
 #endif // CCTVPROTOCOLL_H
