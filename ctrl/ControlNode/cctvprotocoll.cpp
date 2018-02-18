@@ -87,6 +87,57 @@ QString CctvProtocoll::discover_getMessage( QString nodePort,
 
 
 /**
+ * @brief   CctvProtocoll::discover_isValidMsg
+ *          This method is used to determine if the received discovery-message is valid or not.
+ * @param   msg - received discovery message
+ * @return  true - if msg complies with the discovery-message specifications
+ * @return  false - if msg does not comply with the discovery-message specifications
+ */
+bool CctvProtocoll::discover_isValidMsg(QString msg) {
+    int             err;
+    QJsonDocument   doc;
+    QJsonObject     object;
+
+    err=0;
+
+    /*
+     * -------------------------------------------------------------------------------- PARAM CHECK
+     */
+    if(msg == "" || msg == NULL) { err=1; }
+
+    if(!err) {
+        doc = QJsonDocument::fromJson(msg.toUtf8());
+    }
+
+    if(!err) {
+        if(doc.isNull())    { err=1; }
+        if(!doc.isObject()) { err=1; }
+    }
+
+    if(!err){
+        object = doc.object();
+        if(!object.contains(CCTVPROT_DISCOVER_NODE_TYPE))       { err=1; }
+        if(!object.contains(CCTVPROT_DISCOVER_NODE_PORT))       { err=1; }
+        if(!object.contains(CCTVPROT_DISCOVER_NODE_IP))         { err=1; }
+        if(!object.contains(CCTVPROT_DISCOVER_NODE_HOSTNAME))   { err=1; }
+    }
+
+    if(!err) { return true; }
+    return false;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/**
  * @brief   CctvProtocoll::operational_getMessage
  *          This method generates a transmission message for the operational process from
  *          the control-node to one of the other nodes

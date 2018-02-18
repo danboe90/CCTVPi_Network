@@ -47,21 +47,22 @@ public:
     /*
      * -------------------------------------------------------------- METHODES FOR DISCOVER PROCESS
      */
-    QString discover_getMessage(QJsonObject object);
-    QString discover_getMessage(QString nodePort,
-                                QString nodeIP,
-                                QString nodeHostname,
-                                QString nodeType);
+    QString discover_getMessage(        QJsonObject object);
+    QString discover_getMessage(        QString nodePort,
+                                        QString nodeIP,
+                                        QString nodeHostname,
+                                        QString nodeType);
+    bool discover_isValidMsg(           QString msg);
 
     /*
      * ------------------------------------------------------------ METHODS FOR OPERATIONAL PROCESS
      */
-    QString operational_getMessage(QJsonObject object);
-    QString operational_getMessage(QString nodePort,
-                                   QString nodeIP,
-                                   QString nodeHostname,
-                                   QString nodeType,
-                                   QJsonObject configuration);
+    QString operational_getMessage(     QJsonObject object);
+    QString operational_getMessage(     QString nodePort,
+                                        QString nodeIP,
+                                        QString nodeHostname,
+                                        QString nodeType,
+                                        QJsonObject configuration);
 
     QJsonObject operational_getConfigCam(QString framewidth,
                                          QString frameheight,
