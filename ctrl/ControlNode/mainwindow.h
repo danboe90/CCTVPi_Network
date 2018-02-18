@@ -2,8 +2,12 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+
 #include <cctvprotocoll.h>
 #include <nodeinfo.h>
+
+#include <QUdpSocket>
+#include <QHostAddress>
 
 namespace Ui {
 class MainWindow;
@@ -25,9 +29,15 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
     NodeInfo listAuthNodes;
     NodeInfo listCamNodes;
     NodeInfo listDispNodes;
+
+    QUdpSocket *discoverySocket;
+
+private slots:
+    void readPendingDatagrams();
 };
 
 #endif // MAINWINDOW_H

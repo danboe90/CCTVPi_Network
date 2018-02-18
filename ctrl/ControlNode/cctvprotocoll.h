@@ -6,6 +6,8 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 
+#define CCTVPROT_DISCOVER_NODE_MSG_PKGSIZE          1024
+
 #define CCTVPROT_DISCOVER_NODE_PORT                 "nodePort"
 #define CCTVPROT_DISCOVER_NODE_TYPE                 "nodeType"
 #define CCTVPROT_DISCOVER_NODE_IP                   "nodeIP"
