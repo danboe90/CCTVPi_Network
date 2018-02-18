@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <cctvprotocoll.h>
+#include <nodeinfo.h>
 
 namespace Ui {
 class MainWindow;
@@ -23,6 +25,9 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    NodeInfo listAuthNodes;
+    NodeInfo listCamNodes;
+    NodeInfo listDispNodes;
 };
 
 #endif // MAINWINDOW_H
