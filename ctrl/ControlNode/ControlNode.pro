@@ -27,7 +27,8 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     cctvprotocoll.cpp \
     nodeinfo.cpp \
-    cctvprotocoll_discovery.cpp
+    cctvprotocoll_discovery.cpp \
+    cctvprotocoll_operational.cpp
 
 HEADERS  += mainwindow.h \
     cctvprotocoll.h \
